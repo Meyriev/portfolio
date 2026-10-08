@@ -626,6 +626,105 @@ button,a{-webkit-tap-highlight-color:transparent}
   .ct-t--tg .ct-go{width:48px;height:48px;margin-top:-24px;right:14px}
   .ct-n{font-size:28px}
 }
+/* кейс Serlam: телефоны рядами */
+.phones{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-top:22px}
+.phones--2{grid-template-columns:repeat(2,minmax(0,1fr));max-width:480px}
+.phones figure{margin:0;min-width:0}
+.phones img{display:block;width:100%;height:auto;aspect-ratio:540/1099;object-fit:cover;border-radius:22px;background:#08090b;box-shadow:0 0 0 1px var(--line)}
+.phones figcaption{margin-top:9px;font-size:14.5px;line-height:1.3;color:var(--muted)}
+.sheet-case .lead + .phones{margin-top:26px}
+.phones--web img{aspect-ratio:540/924}
+.wide{display:grid;gap:14px;margin-top:22px}
+.wide figure{margin:0}
+.wide img{display:block;width:100%;height:auto;border-radius:18px;box-shadow:0 0 0 1px var(--line)}
+.wide figcaption{margin-top:9px;font-size:14.5px;color:var(--muted)}
+.wide + .phones{margin-top:14px}
+@media (max-width:940px){
+  .phones,.phones--2{display:flex;max-width:none;gap:8px;overflow-x:auto;scroll-snap-type:x mandatory;margin-inline:-22px;padding-inline:22px;scroll-padding-inline:22px;scrollbar-width:none}
+  .phones::-webkit-scrollbar{display:none}
+  .phones figure{flex:0 0 64%;scroll-snap-align:start}
+  .phones img{border-radius:18px}
+}
+/* обложка Serlam: виджет как в приложении */
+.case--serlam .planet{display:none}
+.case--serlam .case-demo{padding:18px 0 4px}
+.sl-w{position:relative;isolation:isolate;overflow:hidden;width:min(430px,100%);border-radius:34px;background:#03070b;padding:24px 16px 22px;display:grid;justify-items:center;gap:22px;box-shadow:0 24px 50px -10px #000,inset 0 1px 1px rgba(220,234,255,.08),inset 0 -1px 0 color-mix(in srgb,var(--c) 70%,transparent)}
+.sl-bed{position:absolute;inset:0;z-index:-1;pointer-events:none;background:radial-gradient(ellipse 72% 40% at 50% 108%,color-mix(in srgb,var(--c) 55%,transparent),transparent 94%),radial-gradient(ellipse 85% 14% at 50% 102%,var(--c),transparent 98%),radial-gradient(ellipse 60% 30% at 50% 46%,color-mix(in srgb,var(--c) 12%,transparent),transparent 80%)}
+.sl-w .scale button i{box-shadow:0 0 0 5px #03070b}
+.sl-w .scale button[aria-pressed="true"] i{box-shadow:0 0 0 4px #03070b,0 0 16px 2px var(--c)}
+.sl-orb{width:min(168px,42vw);box-shadow:0 0 70px -12px color-mix(in srgb,var(--c) 60%,transparent)}
+.sl-w .plate{background:rgba(3,7,11,.6)}
+.sl-w .plate .sphere{width:46px}
+@media (max-width:940px){
+  .sl-w{border-radius:30px;padding:20px 10px 18px;gap:18px}
+  .sl-orb{width:min(140px,40vw)}
+}
+/* кейс на десктопе: отдельная страница во весь экран, а не узкое окно */
+@media (min-width:941px){
+  .sheet-panel{width:100%;height:100%;max-height:none;border-radius:0}
+  .sheet-bar{padding:20px 24px 12px max(40px,calc((100% - 1120px)/2))}
+  .sheet-scroll{padding:10px max(40px,calc((100% - 1120px)/2)) 120px}
+  .sheet-case h2{font-size:clamp(48px,6vw,88px)}
+  .sheet-case .lead{font-size:26px;max-width:28em}
+  .sheet-case p{max-width:36em}
+}
+/* Serlam: живое приложение */
+.sl-w{display:none!important}
+.case--serlam .case-demo{align-content:end;padding:10px 0 0;margin-bottom:-22px}
+.sl-cover{width:270px;height:430px;overflow:hidden;border-radius:44px 44px 0 0;background:#08090b;box-shadow:0 0 0 7px #1a1b1e,0 0 0 8px #2a2c30,0 -20px 80px -20px color-mix(in srgb,var(--c) 45%,transparent);pointer-events:none;margin-top:8px}
+.sl-cover iframe{width:390px;height:844px;border:0;transform:scale(.6923);transform-origin:0 0}
+.sl-ph{flex:none;width:300px;height:649px;overflow:hidden;border-radius:46px;background:#08090b;box-shadow:0 0 0 7px #1a1b1e,0 0 0 8px #2e3034,0 40px 80px -30px rgba(0,0,0,.6)}
+.sl-ph iframe{width:390px;height:844px;border:0;transform:scale(.7692);transform-origin:0 0;display:block}
+.sl-live{display:flex;gap:40px;align-items:center;margin-top:30px;padding:36px;border-radius:32px;background:#000;color:#fff}
+.sl-side{display:grid;gap:12px;align-content:center}
+.sl-side h4{margin:0!important;font-size:26px!important}
+.sl-side p{color:rgba(255,255,255,.7)}
+.sl-chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+.sl-chips button{height:40px;padding:0 16px;border-radius:999px;border:1px solid rgba(255,255,255,.22);color:#fff;font-size:15px;transition:background-color .2s ease-out,color .2s ease-out}
+.sl-chips button[aria-pressed="true"]{background:#fff;color:#000;border-color:#fff}
+.sl-step{display:flex;gap:56px;align-items:center;margin-top:72px}
+.sl-txt{flex:1;min-width:0;display:grid;gap:8px}
+.sl-txt h4{margin:0!important}
+.sl-n{font-family:var(--mono);font-size:13px;color:var(--muted)}
+.sl-comps{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:18px}
+.sl-comp{border-radius:26px;background:var(--line);padding:10px 10px 20px;display:grid;align-content:start;gap:8px}
+.sl-comp--wide{grid-column:1 / -1}
+.sl-comp h4,.sl-comp p{margin:0 10px!important}
+.sl-comp h4{margin-top:10px!important}
+.sl-comp .swatches{margin:0}
+.sl-crop{position:relative;overflow:hidden;border-radius:18px;background:#08090b;isolation:isolate}
+.sl-crop iframe{position:absolute;left:50%;top:50%;width:390px;height:844px;border:0;margin:-422px 0 0 -195px}
+.sl-crop iframe.is-on{margin:0}
+.sl-board{margin-top:80px;display:grid;gap:10px}
+.sl-board h4{margin:0!important}
+.sl-board .sl-crop{margin-top:14px;border-radius:28px}
+.sl-board + .sl-board{margin-top:96px}
+.sl-stage{height:170px;border-radius:18px;background:#000;color:#fff;display:grid;place-items:center;padding:0 12px;overflow:hidden}
+.sl-plate .sphere{width:46px}
+.sl-scale{pointer-events:none}
+.sl-cat-go{height:46px;padding:0 20px;border-radius:999px;background:#fff;color:#000;font-weight:500}
+@media (min-width:941px){
+  .sl-live{padding:56px 64px;gap:72px}
+  .sl-live .sl-ph{width:360px;height:779px}
+  .sl-live .sl-ph iframe{transform:scale(.9231)}
+  .sl-side h4{font-size:36px!important}
+  .sl-step{gap:96px;margin-top:120px}
+  .sl-step .sl-ph{width:340px;height:736px}
+  .sl-step .sl-ph iframe{transform:scale(.8718)}
+  .sl-step .sl-txt h4{font-size:32px}
+  .sl-board{margin-top:120px}
+  .sl-board + .sl-board{margin-top:140px}
+  .sl-board h4{font-size:32px}
+}
+@media (max-width:940px){
+  .sl-cover{width:240px;height:380px}
+  .sl-cover iframe{transform:scale(.6154)}
+  .case--serlam .case-demo{margin-bottom:-84px}
+  .sl-live{flex-direction:column;padding:24px 14px;margin-inline:-8px}
+  .sl-step{flex-direction:column;align-items:stretch;gap:20px}
+  .sl-step .sl-ph{align-self:center}
+  .sl-comps{grid-template-columns:1fr}
+}
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation:none !important;transition:none !important}
 }
@@ -769,13 +868,9 @@ button,a{-webkit-tap-highlight-color:transparent}
           <h2 class="case-title"><button type="button" data-open-case="serlam">Serlam <span class="what">время намаза на одном спокойном экране</span></button></h2>
         </div>
         <div class="case-demo" id="serlamDemo">
-          <div class="plate">
-            <span class="sphere" aria-hidden="true"></span>
-            <span class="plate-text">
-              <span class="plate-name" id="plName">Зухр, 12:17</span>
-              <span class="plate-sub"><span id="plPre">Ещё</span> <b id="plVal">1 ч 40 мин</b></span>
-            </span>
-          </div>
+          <div class="sl-cover" aria-hidden="true"><iframe class="sl-app" data-screen="now" src="serlam/index.html" title="" tabindex="-1"></iframe></div>
+          <div class="sl-w">
+          <div class="sl-bed" aria-hidden="true"></div>
           <div class="scale" role="group" aria-label="Шкала дня: шесть точек">
             <button type="button" aria-pressed="false"><i></i>Фаджр</button>
             <button type="button" aria-pressed="false"><i></i>Восход</button>
@@ -784,6 +879,16 @@ button,a{-webkit-tap-highlight-color:transparent}
             <button type="button" aria-pressed="false"><i></i>Магриб</button>
             <button type="button" aria-pressed="false"><i></i>Иша</button>
           </div>
+          <span class="sphere sl-orb" aria-hidden="true"></span>
+          <div class="plate">
+            <span class="sphere" aria-hidden="true"></span>
+            <span class="plate-text">
+              <span class="plate-name" id="plName">Зухр, 12:17</span>
+              <span class="plate-sub"><span id="plPre">Ещё</span> <b id="plVal">1 ч 40 мин</b></span>
+            </span>
+          </div>
+          </div>
+          
         </div>
         <div class="case-foot"><button class="case-open" type="button" data-open-case="serlam" aria-label="Открыть кейс Serlam">Открыть кейс</button></div>
       </article>
@@ -943,42 +1048,66 @@ button,a{-webkit-tap-highlight-color:transparent}
   <div class="sheet-scroll">
 
     <section class="sheet-case" id="case-serlam" hidden>
-      <ul class="pills"><li>Свой продукт</li><li>2026</li><li>Открыт</li></ul>
+      <ul class="pills"><li>Свой продукт</li><li>2026</li><li>Дизайн и код</li></ul>
       <h2>Serlam</h2>
       <p class="lead">Приложение времени намаза. Отвечает на один вопрос: какой намаз идёт и сколько до конца.</p>
-
-      <h3>Откуда задача</h3>
-      <div class="todo"><b>Заполнить</b><p>Что не устраивало в существующих приложениях. Два предложения и скрин типичного экрана рядом с вашим.</p></div>
-
+      <div class="sl-live">
+        <div class="sl-ph sl-ph--big"><iframe class="sl-app" id="slLive" data-screen="now" src="serlam/index.html" title="Serlam: живое приложение" loading="lazy"></iframe></div>
+        <div class="sl-side">
+          <h4>Это не скриншот</h4>
+          <p>Здесь настоящее приложение: его можно листать и нажимать. Или переключите экран:</p>
+          <div class="sl-chips" role="group" aria-label="Экраны приложения">
+            <button type="button" data-sl-show="now" aria-pressed="true">Сейчас</button>
+            <button type="button" data-sl-show="day" aria-pressed="false">Весь день</button>
+            <button type="button" data-sl-show="azkar" aria-pressed="false">Азкары</button>
+            <button type="button" data-sl-show="qibla" aria-pressed="false">Кибла</button>
+            <button type="button" data-sl-show="month" aria-pressed="false">Месяц</button>
+            <button type="button" data-sl-show="settings" aria-pressed="false">Настройки</button>
+            <button type="button" data-sl-show="cat" aria-pressed="false">Кот</button>
+          </div>
+        </div>
+      </div>
       <h3>Моя роль</h3>
-      <p>Идея, название, дизайн интерфейса и анимации.</p>
-      <div class="todo"><b>Уточнить</b><p>Код: пишете один или с разработчиком.</p></div>
-
-      <h3>Решения</h3>
-      <h4>Один экран вместо меню</h4>
-      <p>Приложение открывают на три секунды. Поэтому ответ стоит на первом экране, а весь день, азкары, кибла и расписание лежат в одном касании.</p>
-      <h4>Цвет вместо чтения</h4>
-      <p>У каждого намаза свой цвет, и интерфейс перекрашивается вслед за временем. Через несколько дней намаз узнаётся по цвету раньше, чем по цифрам.</p>
-      <h4>Свет как часы</h4>
-      <p>Сфера на главном экране освещена так, как солнце или луна в этот час. Название тоже про свет: «сердало» и «ламаз», свет и намаз по-ингушски.</p>
-      <figure class="swatches" aria-label="Пять намазов: у каждого свой цвет и свой свет">
-        <div><span class="sphere" style="--c:#8793ff;--lx:16%;--ly:76%"></span>Фаджр</div>
-        <div><span class="sphere" style="--c:#a9e4ff;--lx:50%;--ly:12%"></span>Зухр</div>
-        <div><span class="sphere" style="--c:#ffd27a;--lx:78%;--ly:26%"></span>Аср</div>
-        <div><span class="sphere" style="--c:#ff7e6b;--lx:90%;--ly:60%"></span>Магриб</div>
-        <div><span class="sphere" style="--c:#c4bdff;--lx:30%;--ly:24%"></span>Иша</div>
-      </figure>
-      <h4>Кот</h4>
-      <p>На плашке живёт кот: ходит, спит и мурлычет, если погладить. На время намаза не влияет и отключается в настройках.</p>
+      <p>Всё сам: идея, название, интерфейс, анимации и код.</p>
+      <h3>Экраны</h3>
+      <section class="sl-step">
+        <div class="sl-txt"><span class="sl-n">01</span><h4>Сейчас</h4><p>Приложение открывают на три секунды. Поэтому первый экран отвечает сразу: какой намаз идёт, до скольки и что дальше. Сфера освещена так, как небо в этот час. Нажмите на неё, чтобы посмотреть другой намаз.</p></div>
+        <div class="sl-ph "><iframe class="sl-app" data-screen="now" src="serlam/index.html" title="Serlam: живое приложение" loading="lazy"></iframe></div>
+      </section>
+      <section class="sl-step">
+        <div class="sl-txt"><span class="sl-n">02</span><h4>Весь день</h4><p>Шесть плашек от Фаджра до Иши. Текущий намаз подсвечен, прошедшие приглушены, у будущих отсчёт.</p></div>
+        <div class="sl-ph "><iframe class="sl-app" data-screen="day" src="serlam/index.html" title="Serlam: живое приложение" loading="lazy"></iframe></div>
+      </section>
+      <section class="sl-step">
+        <div class="sl-txt"><span class="sl-n">03</span><h4>Азкары</h4><p>Три набора: после намаза, утром и вечером. Касание считает повторения и само переводит дальше. Пропущенное можно вернуть в конце.</p></div>
+        <div class="sl-ph "><iframe class="sl-app" data-screen="azkar" src="serlam/index.html" title="Serlam: живое приложение" loading="lazy"></iframe></div>
+      </section>
+      <section class="sl-step">
+        <div class="sl-txt"><span class="sl-n">04</span><h4>Кибла</h4><p>Направление и расстояние до Каабы. Если компаса нет, подсказка объясняет, как найти направление по солнцу.</p></div>
+        <div class="sl-ph "><iframe class="sl-app" data-screen="qibla" src="serlam/index.html" title="Serlam: живое приложение" loading="lazy"></iframe></div>
+      </section>
+      <section class="sl-step">
+        <div class="sl-txt"><span class="sl-n">05</span><h4>Месяц</h4><p>Расписание на любой день месяца. Выберите дату, и внизу появится время всех намазов.</p></div>
+        <div class="sl-ph "><iframe class="sl-app" data-screen="month" src="serlam/index.html" title="Serlam: живое приложение" loading="lazy"></iframe></div>
+      </section>
+      <section class="sl-step">
+        <div class="sl-txt"><span class="sl-n">06</span><h4>Настройки</h4><p>Город с дугой солнца, метод расчёта, поправки по каждому намазу, мазхаб для Асра и язык. Семь методов, среди них свой для Ингушетии, сверенный с местным расписанием.</p></div>
+        <div class="sl-ph "><iframe class="sl-app" data-screen="settings" src="serlam/index.html" title="Serlam: живое приложение" loading="lazy"></iframe></div>
+      </section>
+      <h3>Компоненты</h3>
+      
+      <section class="sl-board"><h4>Плашка</h4><p>Главный ответ в одной строке. Линия по контуру показывает, какая часть времени намаза уже прошла.</p><div class="sl-crop" style="height:300px"><iframe class="sl-part" loading="lazy" data-sel="#badge" src="serlam/index.html" title="Плашка: живой компонент"></iframe></div></section>
+      <section class="sl-board"><h4>Кот</h4><p>Живёт на плашке. Нажмите, и он подпрыгнет. Подержите палец, и замурлычет. Кот платный, 299 ₽: так поддерживают бесплатное приложение.</p><div class="sl-crop" style="height:300px"><iframe class="sl-part" loading="lazy" data-sel="#badge" src="serlam/index.html" title="Кот: живой компонент"></iframe></div></section>
+      <section class="sl-board"><h4>Шкала дня</h4><p>Шесть точек от Фаджра до Иши. Нажмите на точку, и приложение покажет этот намаз.</p><div class="sl-crop" style="height:260px"><iframe class="sl-part" loading="lazy" data-sel="#scale" src="serlam/index.html" title="Шкала дня: живой компонент"></iframe></div></section>
+      <section class="sl-board"><h4>Сфера</h4><p>Освещена так, как небо в этот час, и окрашена в цвет намаза. Нажмите на неё, чтобы выбрать другой.</p><div class="sl-crop" style="height:440px"><iframe class="sl-part" loading="lazy" data-sel="#orb" src="serlam/index.html" title="Сфера: живой компонент"></iframe></div></section>
 
       <h3>Что вышло</h3>
-      <p>Serlam открыт в браузере и ставится на экран «Домой». Работает на русском, английском и арабском.</p>
-      <div class="todo"><b>Заполнить</b><p>Дата запуска, сколько людей открывает, подписчики канала. И один пример: замечание пользователя и что после него изменилось.</p></div>
+      <p>Serlam открыт в браузере и ставится на экран «Домой». Работает без интернета, на русском, английском и арабском. У проекта есть свой лендинг, serlam.ru.</p>
+      <div class="todo"><b>Заполнить</b><p>Дата запуска, сколько людей открывает. И один пример: замечание пользователя и что после него изменилось.</p></div>
       <p>Дальше: уведомления и приложения для iPhone и Android.</p>
-
       <div class="sheet-links">
         <a href="https://serlam.online/" target="_blank" rel="noopener">Открыть Serlam</a>
-        <a href="https://serlam.ru/" target="_blank" rel="noopener">Лендинг</a>
+        <a href="https://serlam.ru/" target="_blank" rel="noopener">Открыть лендинг</a>
       </div>
     </section>
 
@@ -1658,6 +1787,28 @@ button,a{-webkit-tap-highlight-color:transparent}
       if(el.animate) el.animate([{opacity:0,transform:'scale(.96)',filter:'blur(8px)'},{opacity:1,transform:'none',filter:'blur(0)'}],{duration:420,delay:80+i*90,easing:EASE,fill:'backwards'});
     });
   }
+})();
+</script>
+<script>
+(function(){
+  function c(d,s){var e=d.querySelector(s);if(e)e.click()}
+  var A={day:function(d){c(d,'#day-btn')},azkar:function(d){c(d,'#azkar-btn')},qibla:function(d){c(d,'#qibla-btn')},month:function(d){c(d,'#month-tab')},settings:function(d){c(d,'#settings-btn')},cat:function(d){c(d,'#settings-btn');setTimeout(function(){c(d,'[data-go=cat]')},600)}};
+  function bind(f){f.addEventListener('load',function(){try{var d=f.contentDocument,k=f.getAttribute('data-screen');if(A[k])setTimeout(function(){A[k](d)},600)}catch(e){}})}
+  document.querySelectorAll('iframe.sl-app').forEach(bind);
+  function place(f){try{var d=f.contentDocument,el=d.querySelector(f.getAttribute('data-sel'));if(!el)return;var r=el.getBoundingClientRect(),box=f.parentNode;
+    f.style.left=Math.round(box.clientWidth/2-(r.left+r.width/2))+'px';f.style.top=Math.round(box.clientHeight/2-(r.top+r.height/2))+'px';f.classList.add('is-on')}catch(e){}}
+  function tryPlace(f,n){try{var el=f.contentDocument&&f.contentDocument.querySelector(f.getAttribute('data-sel'));if(el&&el.getBoundingClientRect().width>0&&f.parentNode.clientWidth>0){place(f);return}}catch(e){}if(n<40)setTimeout(function(){tryPlace(f,n+1)},400)}
+  document.querySelectorAll('iframe.sl-part').forEach(function(f){f.addEventListener('load',function(){tryPlace(f,0)})});
+  if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var f=e.target.querySelector('iframe');setTimeout(function(){tryPlace(f,0)},300)}})});document.querySelectorAll('.sl-crop').forEach(function(c){io.observe(c)})}
+  document.querySelectorAll('[data-open-case="serlam"]').forEach(function(b){b.addEventListener('click',function(){setTimeout(function(){document.querySelectorAll('iframe.sl-part').forEach(function(f){tryPlace(f,0)})},500)})});
+  addEventListener('resize',function(){document.querySelectorAll('iframe.sl-part.is-on').forEach(place)});
+  var live=document.getElementById('slLive');
+  document.querySelectorAll('[data-sl-show]').forEach(function(b){b.addEventListener('click',function(){
+    var k=b.getAttribute('data-sl-show');live.setAttribute('data-screen',k);
+    document.querySelectorAll('.sl-chips [data-sl-show]').forEach(function(x){x.setAttribute('aria-pressed',x.getAttribute('data-sl-show')===k?'true':'false')});
+    try{live.contentWindow.location.reload()}catch(e){live.src=live.src}
+    var sc=live.closest('.sheet-scroll'); if(sc&&b.classList.contains('sl-cat-go')) sc.scrollTo({top:live.closest('.sl-live').offsetTop-20,behavior:'smooth'});
+  })});
 })();
 </script>
 </body>
